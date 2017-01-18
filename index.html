@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html lang="en" ng-app="Angular1">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Sergey Chygrynets">
+  <title>Test--Angular1</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body ng-controller="ClientsCollectionController" >
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-6 col-sm-5 col-md-4 col-lg-4 list-group"> 
+        <input type="text" class="search form-control" placeholder="Search" ng-model="searchText">
+        <div class="list-group-item" ng-repeat="client in clientsCollection | filter:searchText" ng-click="showDetails(client)">
+          <img src="{{client.general.avatar}}" class="avatarInList" alt="avatar">
+          <div class="fullName">{{client.general.firstName}} {{client.general.lastName}}</div>
+        </div>
+      </div>
+      <div class="col-xs-6 col-sm-7 col-md-8 col-lg-8 details" ng-show="clientDetails">
+        <div class="fixed">
+          <img src="{{clientDetails.general.avatar}}" class="avatarInDetails" alt="avatar">
+          <div class="fullNameDetails">
+            {{clientDetails.general.firstName}} {{clientDetails.general.lastName}}
+          </div>
+          <div class="jobDetails">
+            <span class="jobTitle">{{clientDetails.job.title}}
+            </span>
+            <span class="jobCompany">- {{clientDetails.job.company}}.
+            </span>
+          </div>
+          <div class="addressDetails">
+            {{clientDetails.address.country}}, {{clientDetails.address.zipCode}} - {{clientDetails.address.city}}, {{clientDetails.address.street}}.
+          </div>
+          <div class="contactDetails">
+            <b>E-mail: </b>{{clientDetails.contact.email}}, <b>phone: </b>{{clientDetails.contact.phone}}.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="js/build/angular.min.js"></script>
+  <script src="js/build/app.js"></script>
+</body>
+</html>

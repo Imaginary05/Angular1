@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.fixed {
+  position: fixed;
+}
+.list-group-item {
+  background: lightgrey;
+  top: 33px;
+}
+.avatarInList {
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+.fullName {
+  display: inline-block;
+  padding: 0 15px;
+  font: bold 16px sans-serif;
+}
+.search {
+  top: 0;
+  border-width: 0 0 1px;
+  border-radius: 0;
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  width:inherit;
+  padding-right: 15px;
+  background: lightblue;
+  color: tomato;
+}
+.list-group, .details {
+  position: relative;
+  padding-right: 0;
+}
+.avatarInDetails {
+  display: inline-block;
+  border-radius: 10%;
+}
+.fullNameDetails {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0 15px;
+  font: bold 36px sans-serif;
+}
+.jobDetails {
+  margin: 10px 0;
+}
+.jobTitle {
+  font: bold 18px sans-serif;
+}
+.jobCompany {
+  font: 18px sans-serif;
+}
+.addressDetails {
+  margin: 10px 0;
+  font: 16px sans-serif;
+}
+.contactDetails {
+  margin: 10px 0;
+  font: 16px sans-serif;
+}
